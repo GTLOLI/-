@@ -1,0 +1,228 @@
+:root{
+    --Softorange:hsl(35, 77%, 62%);
+    --Softred:hsl(5, 85%, 63%);
+    --Offwhite:hsl(36, 100%, 99%);
+    --Grayishblue:hsl(233, 8%, 79%);
+    --Darkgrayishblue:hsl(236, 13%, 42%);
+    --Verydarkblue:hsl(240, 100%, 5%);
+    --centerPadding:1rem;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+    padding:0;  
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--Offwhite);
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  li{
+      list-style: none;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+main{
+     padding: 1rem 1rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.contnet{
+    overflow: hidden;
+}
+
+/* 头部 */
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top_left{
+    width: 48px;
+}
+
+/* 内容部分 */
+.center{
+    margin: 2rem 0; 
+}
+.center_top h1{
+    padding: var( --centerPadding) 0;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.center_top p{
+    padding: var(--centerPadding) 0;
+    color: var(--Darkgrayishblue);
+}
+
+.article_go{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.article_go span{
+   padding: 0.5rem 2rem;
+   background-color: var(--Softred);
+   color: aliceblue;
+   font-weight: bold;
+}
+/* 内容页底部黑色的那一块 */
+.center_bottom{
+    color: aliceblue;
+    max-width: 100%;
+    background-color: var(--Verydarkblue);
+}
+.center_bottom ul{
+    padding: var(--centerPadding);
+}
+
+.center_bottom ul li:last-child::after{
+    display: none;
+}
+
+.center_bottom ul li::after{
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.76);
+}
+
+.center_bottom ul li{
+    padding: 1rem 0;
+}
+
+.center_bottom ul li h1{
+    color: var(--Softorange);
+    padding-bottom: var(--centerPadding);
+}
+.center_bottom ul li p{
+    font-size: 17px;
+    font-weight: 700;
+    padding: var(--centerPadding) 0;
+}
+.center_bottom ul li span{
+    color: rgba(255, 255, 255, 0.479);
+}
+
+/* 底部部分 */
+.foot ul li{
+    display: flex;
+    margin: 1.5rem 0;
+    gap: 1rem;
+}
+.foot h2{
+    color: var(--Darkgrayishblue);
+}
+.foot p{
+    font-size: 18px;
+    font-weight: bold;
+}
+.foot span{
+    color: var(--Darkgrayishblue);
+}
+
+
+.foot ul li .left{
+    flex-basis: 100px;
+    width: 100px;
+    flex-shrink: 0;
+}
+
+/* 侧边菜单栏 */
+.menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+    padding: 1rem 2rem;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+}
+.menu .top{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 100px;
+}
+.menu .nav li{
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+/* 遮罩层 */
+.mask{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.555);    
+}
+
+.active{
+    transform: translateX(0);
+}
+
+/* 桌面端 */
+.desktopNav{
+    display: none;
+}
+
+/* 媒体查询 */
+@media screen and (min-width:800px) {
+    .contnet {
+        max-width: 1190px;
+    }
+    .top_right{
+        display: none;
+    }
+    .desktopNav{
+        display: block;
+    }
+    .desktopNav ul{
+        display: flex;
+        gap: 4rem;
+    }
+    .menu{
+        display: none;
+    }
+    .center .center_top{
+       max-width: 65%;
+    }
+    .center .center_bottom{
+        max-width: 33%;
+    }
+    .center{
+        display: flex;
+        justify-content: space-between;
+    }
+    .foot-list{
+        display: flex;
+        gap: 8px;
+    }
+}

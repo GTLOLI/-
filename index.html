@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>优纪|新闻资讯响应式布局</title>
+  <link rel="stylesheet" href="./main.css">
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+      <div class="contnet">
+          <div class="top">
+            <div class="top_left">
+              <img src="./assets/images/logo.svg">
+            </div>
+            <div class="top_right">
+              <img src="./assets/images/icon-menu.svg">
+            </div>
+            <!-- 桌面端菜单 -->
+            <div class="desktopNav">
+                <ul>
+                  <li>主页</li>
+                  <li>新闻</li>
+                  <li>文章</li>
+                  <li>热点</li>
+                  <li>关于我们</li>
+                </ul>
+            </div>
+          </div>
+          <!-- 手机端菜单 -->
+          <div class="menu">
+            <div class="top">
+                <img src="./assets/images/icon-menu-close.svg">
+            </div>
+            <ul class="nav">
+              <li>
+                HOME
+              </li>
+              <li>
+                NEW
+              </li>
+              <li>
+                Popular
+              </li>
+              <li>
+               Trending
+              </li>
+              <li>
+              categories
+              </li>
+            </ul>
+          </div>
+          <!-- 遮罩层 -->
+          <div class="mask"></div>
+          <div class="center">
+              <div class="center_top">
+                 <div class="article_img">
+                    <picture>
+                      <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width:680px)">
+                      <img src="./assets/images/image-web-3-mobile.jpg" alt="">
+                    </picture>
+                 </div>
+                 <h1>The Bright Future of web 3.0?</h1>
+                 <p>Your challenge is to build out this news website homepage and get it looking as close to the design as possible.</p>
+                 <div class="article_go">
+                    <span>点击阅读</span>
+                 </div>
+              </div>
+              <div class="center_bottom">
+                 <ul>
+                   <li>
+                     <h1>New</h1>
+                     <p>巴拉巴拉巴拉巴拉巴拉巴拉巴拉</p>
+                     <span>Your challenge is to build out this news website homepage and get it looking as</span>
+                   </li>
+                   <li>
+                     <p>巴拉巴拉巴拉巴拉巴拉巴拉巴拉</p>
+                     <span>Your challenge is to build out this news website homepage and get it looking as</span>
+                   </li>
+                   <li>
+                     <p>巴拉巴拉巴拉巴拉巴拉巴拉巴拉</p>
+                     <span>Your challenge is to build out this news website homepage and get it looking as</span>
+                   </li>
+                 </ul>
+              </div>
+          </div>
+          <div class="foot">
+             <ul class="foot-list">
+               <li>
+                 <div class="left">
+                    <img src="./assets/images/image-retro-pcs.jpg" alt="">
+                 </div>
+                  <div class="right">
+                     <h2>01</h2>
+                     <p>The challenge</p>
+                     <span>View the optimal layout for the interface depending</span>
+                  </div>
+               </li>
+               <li>
+                <div class="left">
+                  <img src="./assets/images/image-top-laptops.jpg" alt="">
+               </div>
+                <div class="right">
+                   <h2>01</h2>
+                   <p>The challenge</p>
+                   <span>View the optimal layout for the interface depending</span>
+                </div>
+               </li>
+               <li>
+                <div class="left">
+                  <img src="./assets/images/image-gaming-growth.jpg" alt="">
+               </div>
+                <div class="right">
+                   <h2>01</h2>
+                   <p>The challenge</p>
+                   <span>View the optimal layout for the interface depending</span>
+                </div>
+               </li>
+             </ul>
+          </div>
+      </div>
+  </main>
+
+<script>
+  let $ = function (ele){
+    return document.querySelector(ele);
+  }
+  //获取点击的菜单按钮
+  let btn = $('.top_right');
+  //获取菜单本体
+  let menu = $('.menu');
+  //获取菜单关闭按钮
+  let closebtn = $(".menu>.top");
+  // 获取遮罩层
+  let mask = $(".mask")
+
+  btn.addEventListener('click',function(){
+    mask.style.display="block";
+    menu.classList.add("active");
+  });
+  closebtn.addEventListener('click',function(){
+    mask.style.display="none";
+    menu.classList.remove("active");
+  })
+
+</script>
+
+</body>
+</html>
